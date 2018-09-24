@@ -1,3 +1,6 @@
+/*Top Bar*/
 .top-bar{background: green; height: 70px;}
 .search{background: yellow; height: 30px;}
+
+/*Menus*/
 .menu ul li, .footer-menu ul li{display: inline;}
