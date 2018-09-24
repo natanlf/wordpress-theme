@@ -1,12 +1,17 @@
 <?php
 
+//Comentários sobre inclusão do css
 //O primeiro parametro da minha função wp_enqueue_style é o identificador que precisa ser unico
 //O segundo é o caminho do arquivo que vamos incluir
 //O terceiro diz se a folha de estilo (css) tem alguma dependencia com algum arquivo
 //O quarto é a versão e não é obrigatório passar
 //O quanto é sobre qual tipo de media esse arquivo se refere, no nosso caso todas
 
+//No caso dos demais scripts segue a mesma lógica da inclusão do css, no caso de js mudou apenas o final para script (wp_enqueue_script), estamos carregando da web e temos uma dependencia onde o js do bootstrap depende do jquery e o ultimo parametro que está true define que vamos carregar o script no fim da página antes do fechamento da tag body
+
 function load_scripts(){
+	wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery' ), '4.0.0', true );
+	wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', array(), '4.0.0', 'all' );
 	wp_enqueue_style( 'template', get_template_directory_uri() . '/css/template.css', array(), '1.0', 'all' );
 }
 	
