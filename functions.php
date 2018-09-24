@@ -19,13 +19,25 @@ function load_scripts(){
 	//então chamo a função load_scripts que é responsável por colocar o arquivo css no tema
 	add_action('wp_enqueue_scripts', 'load_scripts'); 
 
-	//Registrando nossos menus
-	/*Dentro do array temos o my_main_menu que é um slug, ou seja, é um nome curto usado para identificar o menu e recebe um valor (Main Menu) que é o que será exibido na administração do WordPress.
-	Podemos colocar vários menus dentro desse array*/
-	register_nav_menus(
-		array(
-			'my_main_menu' => 'Main Menu',
-			'footer_menu' => 'Footer Menu'
-		)
-	);
+	//Função de configuração
+	function wpcurso_config(){
+		//Registrando nossos menus
+		/*Dentro do array temos o my_main_menu que é um slug, ou seja, é um nome curto usado para identificar o menu e recebe um valor (Main Menu) que é o que será exibido na administração do WordPress.
+		Podemos colocar vários menus dentro desse array*/
+		register_nav_menus(
+			array(
+				'my_main_menu' => 'Main Menu',
+				'footer_menu' => 'Footer Menu'
+			)
+		);
+		//Cabeçalhos customizados, podemos passar vários tipos de parametros para customizar o header
+		//Nesse caso vamos passar somente altura e largura
+		$args = array(
+			'height'	=> 225,
+			'width'		=> 1920
+		);
+		add_theme_support( 'custom-header', $args );
+	}
+
+	add_action( 'after_setup_theme', 'wpcurso_config', 0 );
 ?>

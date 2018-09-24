@@ -6,6 +6,8 @@ Template Name: General Template
 <!--Template que serve para várias páginas, para aplicar nas páginas devemos ir na administração do WordPress, escolher a página e selecionar o modelo de template e salvar
 Esse nome que demos a esse template vai aparecer na administração do WordPress-->
 <?php get_header(); ?>
+<!-- Chama nosso cabeçalho customizado. A classe img-fluid faz a imagem ficar responsiva -->
+<img class="img-fluid" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 	<div class="content-area">
 		<main>
 			<section class="middle-area">
