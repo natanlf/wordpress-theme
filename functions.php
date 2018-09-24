@@ -18,4 +18,13 @@ function load_scripts(){
 	//Quando o gancho do wordpress wp_enqueue_scripts que serve para incluir scripts no tema for chamado
 	//então chamo a função load_scripts que é responsável por colocar o arquivo css no tema
 	add_action('wp_enqueue_scripts', 'load_scripts'); 
+
+	//Registrando nossos menus
+	/*Dentro do array temos o my_main_menu que é um slug, ou seja, é um nome curto usado para identificar o menu e recebe um valor (Main Menu) que é o que será exibido na administração do WordPress.
+	Podemos colocar vários menus dentro desse array*/
+	register_nav_menus(
+		array(
+			'my_main_menu' => 'Main Menu'
+		)
+	);
 ?>
