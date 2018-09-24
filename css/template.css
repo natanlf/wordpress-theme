@@ -1,3 +1,3 @@
 .top-bar{background: green; height: 70px;}
 .search{background: yellow; height: 30px;}
-.menu ul li{display: inline;}
+.menu ul li, .footer-menu ul li{display: inline;}
