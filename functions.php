@@ -37,6 +37,8 @@ function load_scripts(){
 			'width'		=> 1920
 		);
 		add_theme_support( 'custom-header', $args );
+		//Agora podemos definir uma imagem para cada post
+		add_theme_support('post-thumbnails');
 	}
 
 	add_action( 'after_setup_theme', 'wpcurso_config', 0 );
