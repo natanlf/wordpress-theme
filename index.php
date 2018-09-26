@@ -17,8 +17,9 @@
 								while( have_posts() ): the_post();
 
 							?>
-							
-							<?php get_template_part( 'template-parts/content' ); ?>
+							<!--Aqui chamamos o template da página. Chamamos o content e se tiver um formato de image ou video, chamaremos o content-image ou content-vide.
+								Isso depende do formato do post, se tiver um formato padrão então chama o template content, caso seja imagem o content-image, pois esse método get_post_format(), imprime na tela o formato do post, assim podemos concatenar a chamada do template, se o formato for image fica assim: content-image-->
+							<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
 							<?php 
 								endwhile;
