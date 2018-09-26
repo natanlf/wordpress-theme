@@ -39,6 +39,9 @@ function load_scripts(){
 		add_theme_support( 'custom-header', $args );
 		//Agora podemos definir uma imagem para cada post
 		add_theme_support('post-thumbnails');
+		/*Formatos de posts. Existem vários formatos mas vamos usar o padrão, imagem e vídeo
+		Para aplicar o formato de post devo ir no admin do wordpress e selecionar o formato de post desejado*/
+		add_theme_support('post-formats', array('video', 'image'));
 	}
 
 	add_action( 'after_setup_theme', 'wpcurso_config', 0 );
