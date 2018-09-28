@@ -72,7 +72,40 @@
 										/*Para que os parametros dessa consulta acima não infuencia outras consultas nessa mesma página, nós teremos que resetar essa consulta quando chegar no final*/
 										wp_reset_postdata();
 									endif;
+
+									// Segundo Loop
+									/*Usamos array para passar os argumentos, assim conforme o número de argumentos aumenta as chances de nos confundirmos é menor, pois fica tudo mais organizado separando por arrays.
+									O post_type é opcional, caso não passarmos o wordpress coloca automaticamente como post.
+									posts_per_page é a quantidade de post que vamos trazer.
+									category__not_in significa quais categorias vamos excluir da listagem
+									category__in significa quais categorias queremos que retornem
+									offset assim dizemos quantos itens o wordpress deve ignorar no início da lista
+									*/
+									$args = array(
+										'post_type' => 'post',
+										'posts_per_page' => 2,
+										'category__not_in' => array( 7 ),
+										'category__in' => array( 10, 4),
+										'offset' => 1
+									);
+
+									$secondary = new WP_Query( $args );
+
+									if( $secondary->have_posts() ):
+										while( $secondary->have_posts() ): $secondary->the_post();
 									?>
+
+									<!-- Teremos 6 colunas para cada post, desde os dispostivos pequenos até os grandes -->
+									<div class="col-sm-6">
+										<?php get_template_part( 'template-parts/content', 'secondary' ); ?>
+									</div>
+
+									<?php
+										endwhile;
+										wp_reset_postdata();
+									endif;									
+									?>
+
 								</div>
 							</div>
 						</div>						
