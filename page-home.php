@@ -51,25 +51,21 @@
 					<div class="row">
 						<?php get_sidebar( 'home' ); ?>
 						<div class="news col-md-8">
-							<?php 
-							// Se houver algum post
-							if( have_posts() ):
-								// Enquanto houver posts, mostre-os pra gente
-								while( have_posts() ): the_post();
-
-							?>
-
-							<p>Conteúdo vindo do arquivo home.php</p>
-
-							<?php 
-								endwhile;
-							else:
-							?>
-
-							 <p>There's nothing yet to be displayed...</p>
-
-							<?php endif; ?>
-
+							<div class="container">
+								<div class="row">
+									<?php 
+									/* Exitem vários tipos de posts do Wordpress, os posts nativos do wordpress são post e page, vamos usar post mesmo. Queremos um post por página, pois será o nosso post em destaque e colocamos a quais categorias queremos que exiba, usamos o id da categoria que pode ser visto no admin=> posts => categorias, ao passar o mouse em cima da categoria, aparece o id no fim da página */
+										$featured = new WP_Query( 'post_type=post&posts_per_page=1&cat=10,4' );
+										//Se existem posts então mostramos
+										if( $featured->have_posts() ):
+										while( $featured->have_posts() ): $featured->the_post();
+										endwhile;
+										/*Para que os parametros dessa consulta acima não infuencia outras consultas nessa mesma página, nós teremos que resetar essa consulta quando chegar no final*/
+										wp_reset_postdata();
+									endif;
+									?>
+								</div>
+							</div>
 						</div>						
 					</div>
 				</div>				
