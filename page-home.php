@@ -52,6 +52,7 @@
 						<?php get_sidebar( 'home' ); ?>
 						<div class="news col-md-8">
 							<div class="container">
+								<h1>Latest News</h1>
 								<div class="row">
 									<?php 
 									/* Exitem vários tipos de posts do Wordpress, os posts nativos do wordpress são post e page, vamos usar post mesmo. Queremos um post por página, pois será o nosso post em destaque e colocamos a quais categorias queremos que exiba, usamos o id da categoria que pode ser visto no admin=> posts => categorias, ao passar o mouse em cima da categoria, aparece o id no fim da página */
@@ -59,6 +60,14 @@
 										//Se existem posts então mostramos
 										if( $featured->have_posts() ):
 										while( $featured->have_posts() ): $featured->the_post();
+										?>
+										
+										<!-- Col12, pois vai ocupar todo o espaço de minha row pois é a notícia em destaque, indico o template que será usado que é o content-featured.php -->
+										<div class="col-12">
+											<?php get_template_part( 'template-parts/content', 'featured' ); ?>
+										</div>
+
+										<?php	
 										endwhile;
 										/*Para que os parametros dessa consulta acima não infuencia outras consultas nessa mesma página, nós teremos que resetar essa consulta quando chegar no final*/
 										wp_reset_postdata();
