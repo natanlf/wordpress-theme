@@ -1,11 +1,13 @@
 <!-- post_class( array( 'class' => 'featured' ) );
 Com esse código podemos juntar a classe featured com as demais classes que a função post_class gera para nós -->
 <article <?php post_class( array( 'class' => 'featured' ) ); ?>>
-	<h2><?php the_title(); ?></h2>
 	<!-- Mostro a imagem full para ocupar as 12 colunas e adiciono a classe img-fluid do Bootstrpa 4 para a imagem ficar reponsiva -->
 	<div class="thumbnail">
-		<?php the_post_thumbnail( 'large', array( 'class' => 'img-fluid' ) ); ?>
+		<!-- permalinks os locais das urls de um recurso ou um artigo vai ser permanentemente guardado.
+		São links dos posts, das páginas -->
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large', array( 'class' => 'img-fluid' ) ); ?></a>
 	</div>
+	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	<div class="meta-info">
 		<p>
 			by <span><?php the_author_posts_link(); ?></span>
