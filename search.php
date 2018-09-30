@@ -2,7 +2,12 @@
 	<div id="primary">
 		<div id="main">
 			<div class="container">
+				<!-- Mostra o que o usuário pesquisou -->
+				<h2>Search results for: </h2><?php echo get_search_query(); ?>
 				<?php 
+
+				//Chama o formulário de pesquisa
+				get_search_form();
 
 				while( have_posts() ): the_post();
 
