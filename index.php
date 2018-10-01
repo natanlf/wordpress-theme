@@ -21,6 +21,17 @@
 
 							<?php 
 								endwhile;
+								?>
+								<!-- Paginação dos posts, previous mostra os posts mais novos e next os mais antigos, pois o wordpress sempre coloca no início os mais recentes -->
+								<div class="row">
+									<div class="pages text-left col-6">
+										<?php previous_posts_link( "<< Newer posts" ); ?>
+									</div>
+									<div class="pages text-right col-6">
+										<?php next_posts_link( "Older posts >>" ); ?>
+									</div>
+								</div>
+								<?php
 							else:
 							?>
 
