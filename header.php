@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Pega a linguagem usada no admin do wordpress, com está pt-BR então pega portugues mas se mudasse no admin para ingles aqui ficaria em ingles por exemplo -->
+<html <?php language_attributes(); ?>>
 <head>
-	<meta charset="UTF-8">
+	<!-- Pega o charset dinamicamente -->
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<!-- Usamos viewport para variar a escala, pois cada os dipositivos móveis varim muito o seu tamanho -->
 	<meta name="viewport" content="width=device-width"> 
-	<title><?php wp_title(); ?></title>
+	<!-- no wordpress a tag title é incluida no arquivo functions.php -->
 	<?php wp_head(); ?> <!--Função responsável por carregar scripts, folhas de estilos e inclusive as dos plugins do wordpress-->
 </head>
 <body <?php body_class(); ?>>
