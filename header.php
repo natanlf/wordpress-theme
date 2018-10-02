@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<!-- Usamos viewport para variar a escala, pois cada os dipositivos móveis varim muito o seu tamanho -->
 	<meta name="viewport" content="width=device-width"> 
-	<title>Curso WordPress</title>
+	<title><?php wp_title(); ?></title>
 	<?php wp_head(); ?> <!--Função responsável por carregar scripts, folhas de estilos e inclusive as dos plugins do wordpress-->
 </head>
 <body <?php body_class(); ?>>
