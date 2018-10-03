@@ -3,7 +3,7 @@
 		<main>
 			<section class="slide">
 				<!--Uso do plugin que exibe os slides com posts recentes-->
-				<?php echo do_shortcode('[recent_post_slider design="design-1"]'); ?>
+				<?php echo do_shortcode('[recent_post_slider design="design-2" limit="4" category="4,10"]'); ?>
 			</section>
 			<section class="services">
 				<div class="container">
