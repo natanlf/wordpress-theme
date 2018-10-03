@@ -2,9 +2,8 @@
 	<div class="content-area">
 		<main>
 			<section class="slide">
-				<div class="container">
-					<div class="row">Slide</div>
-				</div>
+				<!--Uso do plugin que exibe os slides com posts recentes-->
+				<?php echo do_shortcode('[recent_post_slider design="design-1"]'); ?>
 			</section>
 			<section class="services">
 				<div class="container">
