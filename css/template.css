@@ -12,6 +12,10 @@ h4{ font-size: 18px; margin-top: 0; }
 /* Top Bar Section */
 .top-bar{ background: #b9121b; color: #fff; padding: 15px 0; }
 
+/* Social Icons */
+.social-media-icons ul{ padding: 0; margin: 0; }
+.social-media-icons ul li{ list-style: none; display: inline; margin: 0 5px 0; }
+
 /* Header - Main Menu */
 .menu-area{ background: #f3f3f3; padding: 15px 0; }
 .main-menu ul{ list-style: none; padding: 0; margin: 0; font-size: 28px; }
