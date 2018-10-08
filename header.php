@@ -34,19 +34,24 @@
 		</section>
 		<section class="menu-area">
 			<div class="container">
-				<div class="row">
-					<section class="logo col-md-2 col-12 text-center">Logo</section>
-					<nav class="main-menu col-md-10 text-right">
-						<!-- Chamo o menu através do método wp_nav_menu, preciso informar qual menu eu quero pois posso ter vários, é por isso que precisamos do slug e informamos o slug my_main_menu.
-						Podemos perceber que no caso de dispositivos extra pequenos a logo terá 12 colunas e o menu não tem colunas nesse caso, pois em casos como esse de dispositivos móveis vamos usar um plugin que deixa o menu responsivo  -->
-						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'my_main_menu'
-								)
-							);
-						?>
-					</nav>
+				<!-- https://getbootstrap.com.br/docs/4.1/utilities/flex/ -->
+				<div class="row d-flex align-items-center">
+						<section class="logo col-md-2 col-12 text-center">
+							<?php
+								the_custom_logo(); //chama o logo informado no customizer
+							?>
+						</section>
+						<nav class="main-menu col-md-10 text-right">
+							<!-- Chamo o menu através do método wp_nav_menu, preciso informar qual menu eu quero pois posso ter vários, é por isso que precisamos do slug e informamos o slug my_main_menu.
+							Podemos perceber que no caso de dispositivos extra pequenos a logo terá 12 colunas e o menu não tem colunas nesse caso, pois em casos como esse de dispositivos móveis vamos usar um plugin que deixa o menu responsivo  -->
+							<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'my_main_menu'
+									)
+								);
+							?>
+						</nav>
 				</div>
 			</div>
 			

@@ -46,6 +46,8 @@ function load_scripts(){
 		Para aplicar o formato de post devo ir no admin do wordpress e selecionar o formato de post desejado*/
 		add_theme_support('post-formats', array('video', 'image'));
 		add_theme_support( 'title-tag'); //adiciona a tag title no wordpress, tag importante no SEO
+		//logo qe pose ser alterada pelo customizer
+		add_theme_support( 'custom-logo', array( 'height' => 110, 'width' => 200 ) );
 	}
 
 	add_action( 'after_setup_theme', 'wpcurso_config', 0 );
