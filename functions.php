@@ -1,5 +1,8 @@
 <?php
 
+// Requerendo o arquivo do Customizer
+require get_template_directory() . '/inc/customizer.php';
+
 //Comentários sobre inclusão do css
 //O primeiro parametro da minha função wp_enqueue_style é o identificador que precisa ser unico
 //O segundo é o caminho do arquivo que vamos incluir
