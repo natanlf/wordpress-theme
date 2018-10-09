@@ -2,8 +2,12 @@
 	<div class="content-area">
 		<main>
 			<section class="slide">
-				<!--Uso do plugin que exibe os slides com posts recentes-->
-				<?php echo do_shortcode('[recent_post_slider design="design-2" limit="4" category="4,10"]'); ?>
+				<?php 
+					$design = get_theme_mod('set_slider_option');
+					$limit = get_theme_mod('set_slider_limit');
+					$category = get_theme_mod('set_slider_categories');
+					echo do_shortcode('[recent_post_slider design="design-'.$design.' " limit="'.$limit.'" category='. $category.'"]');
+				?>
 			</section>
 			<section class="services">
 				<div class="container">
@@ -54,8 +58,9 @@
 								<h1>Latest News</h1>
 								<div class="row">
 									<?php 
-									/* Exitem vários tipos de posts do Wordpress, os posts nativos do wordpress são post e page, vamos usar post mesmo. Queremos um post por página, pois será o nosso post em destaque e colocamos a quais categorias queremos que exiba, usamos o id da categoria que pode ser visto no admin=> posts => categorias, ao passar o mouse em cima da categoria, aparece o id no fim da página */
-										$featured = new WP_Query( 'post_type=post&posts_per_page=1&cat=10,4' );
+										/*Tenho todas as categorias que informamos no customizer pa ra poder exibir no primeiro loop*/
+										$loop1cats = get_theme_mod( 'set_loop1_categories' );
+										$featured = new WP_Query( 'post_type=post&posts_per_page=1&cat='.$loop1cats );
 										//Se existem posts então mostramos
 										if( $featured->have_posts() ):
 										while( $featured->have_posts() ): $featured->the_post();
@@ -80,11 +85,17 @@
 									category__in significa quais categorias queremos que retornem
 									offset assim dizemos quantos itens o wordpress deve ignorar no início da lista
 									*/
+									/*Temos as informações de ctagorias para exbir, exlcuir e posts por páginas que informamos no customizer*/
+									$per_page = get_theme_mod( 'set_loop2_posts_per_page' );
+									
+									$loop2_cat_exclude = explode( ',', get_theme_mod( 'set_loop2_categories_to_exclude' ));
+									$loop2_cat_include = explode( ',', get_theme_mod( 'set_loop2_categories_to_include' ));
+
 									$args = array(
 										'post_type' => 'post',
-										'posts_per_page' => 2,
-										'category__not_in' => array( 7 ),
-										'category__in' => array( 10, 4),
+										'posts_per_page' => $per_page,
+										'category__not_in' => $loop2_cat_exclude,
+										'category__in' => $loop2_cat_include,
 										'offset' => 1
 									);
 
