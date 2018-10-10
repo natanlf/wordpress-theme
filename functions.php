@@ -48,6 +48,11 @@ function load_scripts(){
 		add_theme_support( 'title-tag'); //adiciona a tag title no wordpress, tag importante no SEO
 		//logo qe pose ser alterada pelo customizer
 		add_theme_support( 'custom-logo', array( 'height' => 110, 'width' => 200 ) );
+
+		// Habilitando suporte à tradução
+	$textdomain = 'wpwordpress';
+	load_theme_textdomain( $textdomain, get_stylesheet_directory() . '/languages/' ); //tema filho
+	load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' ); //tema pai
 	}
 
 	add_action( 'after_setup_theme', 'wpcurso_config', 0 );
