@@ -11,8 +11,8 @@
 						<div class="error-404">
 						
 						<header>
-							<h1>Page not found</h1>
-							<p>Unfortunately, the page you tried to reach does not exist on this site!</p>
+							<h1><?php _e( 'Page not found', 'wpwordpress' ); ?></h1>
+							<p><?php _e( 'Unfortunately, the page you tried to reach does not exist on this site!', 'wpwordpress' ); ?></p>
 						</header>
 						<!-- Como a página não existe então dou a opção do usuário fazer uma busca e também exibimos os 3 posts recentes -->
 						<div class="error">

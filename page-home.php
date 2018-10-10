@@ -11,7 +11,7 @@
 			</section>
 			<section class="services">
 				<div class="container">
-					<h1>Our Services</h1>
+					<h1><?php _e( 'Our Services', 'wpwordpress' ); ?></h1>
 					<!--Dentro da idv row temos 3 divs cada uma com 4 colunas, somando as 3 da as 12 colunas do Bootstrap 4.
 						Verificamos se a sidebar está ativa, caso esteja nós mostramos na tela, essas sidebars foram registradas no arquivo function e as chamamos pelo id que registramos-->
 					<div class="row">
@@ -55,7 +55,7 @@
 						<?php get_sidebar( 'home' ); ?>
 						<div class="news col-md-8">
 							<div class="container">
-								<h1>Latest News</h1>
+								<h1><?php _e( 'Latest News', 'wpwordpress' ); ?></h1>
 								<div class="row">
 									<?php 
 										/*Tenho todas as categorias que informamos no customizer pa ra poder exibir no primeiro loop*/

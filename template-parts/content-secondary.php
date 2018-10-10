@@ -6,9 +6,9 @@
 	</div>
 	<div class="meta-info">
 		<p>
-			by <span><?php the_author_posts_link(); ?></span>
-			Categories: <span><?php the_category( ' ' ); ?></span>
-			<?php the_tags( 'Tags: <span>', ', ', '</span>' ); ?>
+			<?php _e( 'by', 'wpwordpress' ); ?> <span><?php the_author_posts_link(); ?></span>
+			<?php _e( 'Categories: ', 'wpwordpress' ); ?> <span><?php the_category( ' ' ); ?></span>
+			<?php the_tags( __( 'Tags: ', 'wpwordpress' ), ', ' ); ?>
 		</p>
 	</div>
 	<?php the_excerpt(); ?>

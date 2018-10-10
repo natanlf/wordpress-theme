@@ -31,7 +31,7 @@ Esse nome que demos a esse template vai aparecer na administração do WordPress
 								endwhile;
 							else:
 							?>
-							 <p>There's nothing yet to be displayed...</p>
+							<p><?php _e( 'There&rsquo;s nothing yet to be displayed...', 'wpwordpress' ); ?></p>
 
 							<?php endif; ?>
 

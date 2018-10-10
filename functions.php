@@ -29,8 +29,8 @@ function load_scripts(){
 		Podemos colocar vários menus dentro desse array*/
 		register_nav_menus(
 			array(
-				'my_main_menu' => 'Main Menu',
-				'footer_menu' => 'Footer Menu'
+				'my_main_menu' => __( 'Main Menu', 'wpwordpress' ),
+				'footer_menu' => __( 'Footer Menu', 'wpwordpress' )
 			)
 		);
 		//Cabeçalhos customizados, podemos passar vários tipos de parametros para customizar o header
@@ -62,9 +62,9 @@ add_action( 'widgets_init', 'wpcurso_sidebars' );
 function wpcurso_sidebars(){
 	register_sidebar(
 		array(
-			'name' => 'Home Page Sidebar',
+			'name' => __( 'Home Page Sidebar', 'wpwordpress' ),
 			'id' => 'sidebar-1',
-			'description' => 'Sidebar to be used on Home Page',
+			'description' => __( 'Sidebar to be used on Home Page', 'wpwordpress'),
 			'before_widget' => '<div class="widget-wrapper">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="widget-title">',
@@ -73,9 +73,9 @@ function wpcurso_sidebars(){
 	);
 	register_sidebar(
 		array(
-			'name' => 'Blog Sidebar',
+			'name' => __( 'Blog Sidebar', 'wpwordpress'),
 			'id' => 'sidebar-2',
-			'description' => 'Sidebar to be used on Blog Page',
+			'description' => __( 'Sidebar to be used on Blog Page', 'wpwordpress'),
 			'before_widget' => '<div class="widget-wrapper">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="widget-title">',
@@ -86,9 +86,9 @@ function wpcurso_sidebars(){
 	//Sidebars dos serviços
 	register_sidebar(
 		array(
-			'name' => 'Services 1',
+			'name' => __( 'Services 1', 'wpwordpress' ),
 			'id' => 'services-1',
-			'description' => 'First Services Area.',
+			'description' => __( 'First Services Area.', 'wpwordpress' ),
 			'before_widget' => '<div class="widget-wrapper">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="widget-title">',
@@ -98,9 +98,9 @@ function wpcurso_sidebars(){
 
 	register_sidebar(
 		array(
-			'name' => 'Services 2',
+			'name' => __( 'Services 2', 'wpwordpress' ),
 			'id' => 'services-2',
-			'description' => 'Second Services Area.',
+			'description' => __( 'Second Services Area.', 'wpwordpress' ),
 			'before_widget' => '<div class="widget-wrapper">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="widget-title">',
@@ -110,9 +110,9 @@ function wpcurso_sidebars(){
 
 		register_sidebar(
 		array(
-			'name' => 'Services 3',
+			'name' => __( 'Services 3', 'wpwordpress' ),
 			'id' => 'services-3',
-			'description' => 'Third Services Area.',
+			'description' => __( 'Third Services Area.', 'wpwordpress' ),
 			'before_widget' => '<div class="widget-wrapper">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="widget-title">',
@@ -122,9 +122,9 @@ function wpcurso_sidebars(){
 
 	register_sidebar(
 		array(
-			'name' => 'Social Icons',
+			'name' => __( 'Social Icons', 'wpwordpress' ),
 			'id' => 'social-media',
-			'description' => 'Place your media icons here.',
+			'description' => __( 'Place your media icons here', 'wpwordpress' ),
 			'before_widget' => '<div class="widget-wrapper">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="widget-title">',

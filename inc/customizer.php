@@ -11,8 +11,8 @@ function wpcurso_customizer( $wp_customize ){
 	//primeiro informamos o id da seção
 	$wp_customize->add_section( 
 		'sec_copyright', array(
-			'title' => 'Copyright',
-			'description' => 'Copyright Section'
+			'title' => __( 'Copyright', 'wpwordpress'),
+			'description' => __( 'Copyright Section', 'wpwordpress' )
 		)
 	);
 	
@@ -23,15 +23,15 @@ function wpcurso_customizer( $wp_customize ){
 	$wp_customize->add_setting(
 		'set_copyright', array(
 			'type' => 'theme_mod',
-			'default' => 'Copyright X - All rights reserved',
+			'default' => __( 'Copyright X - All rights reserved', 'wpwordpress' ),
 			'sanitize_callback' => 'wp_filter_nohtml_kses'
 		)
 	);
 
 	$wp_customize->add_control(
 		'set_copyright', array( //informamos o nome da setting usada
-			'label' => 'Copyright',
-			'description' => 'Please, type your copyright information here',
+			'label' => __( 'Copyright', 'wpwordpress' ),
+			'description' => __( 'Choose whether to show the Services section or not', 'wpwordpress' ),
 			'section' => 'sec_copyright', //nome da seção que o controle está ligado
 			'type' => 'text' //estamos controlando um campo do tipo texto
 		)
@@ -41,8 +41,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_section( 
 		'sec_map', array(
-			'title' => 'Map',
-			'description' => 'Map Section'
+			'title' => __( 'Map', 'wpwordpress' ),
+			'description' => __( 'Map Section', 'wpwordpress' )
 		)
 	);	
 
@@ -57,10 +57,14 @@ function wpcurso_customizer( $wp_customize ){
 		)
 	);
 
+	//Temos o %s que serve como coringa pois ele recebe a url
 	$wp_customize->add_control(
 		'set_map_apikey', array(
-			'label' => 'API Key',
-			'description' => 'Get your key <a target="_blank" href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend">here</a>',
+			'label' => __( 'API Key', 'wpwordpress' ),
+			'description' => sprintf(  //como temos tag html tratamos de forma diferente
+				__( 'Get your key <a target="_blank" href="%s">here</a>', 'wpwordpress' ),
+				'https://console.developers.google.com/flows/enableapi?apiid=maps_backend' 
+				),
 			'section' => 'sec_map',
 			'type' => 'text'
 		)
@@ -78,8 +82,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_map_address', array(
-			'label' => 'Type your address here',
-			'description' => 'No special characters allowed',
+			'label' => __( 'Type your address here', 'wpwordpress' ),
+			'description' => __( 'No special characters allowed', 'wpwordpress' ),
 			'section' => 'sec_map',
 			'type' => 'textarea'
 		)
@@ -89,8 +93,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_section( 
 		'sec_slider', array(
-			'title' => 'Slider',
-			'description' => 'Slider Section'
+			'title' => __( 'Slider', 'wpwordpress' ),
+			'description' => __( 'Slider Section', 'wpwordpress' )
 		)
 	);	
 
@@ -106,15 +110,15 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_slider_option', array(
-			'label' => 'Choose your design type here',
-			'description' => 'Choose your design type',
+			'label' => __( 'Choose your design type here', 'wpwordpress' ),
+			'description' => __( 'Choose your design type', 'wpwordpress' ),
 			'section' => 'sec_slider',
 			'type' => 'select',
 			'choices' => array(
-				'1' => 'Design Type 1',
-				'2' => 'Design Type 2',
-				'3' => 'Design Type 3',
-				'4' => 'Design Type 4'
+				'1' => __( 'Design Type 1', 'wpwordpress' ),
+				'2' => __( 'Design Type 2', 'wpwordpress' ),
+				'3' => __( 'Design Type 3', 'wpwordpress' ),
+				'4' => __( 'Design Type 4', 'wpwordpress' )
 			)
 		)
 	);	
@@ -131,8 +135,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_slider_limit', array(
-			'label' => 'Category of posts to display',
-			'description' => 'Choose the number of posts to be displayed',
+			'label' => __( 'Number of posts to display', 'wpwordpress' ),
+			'description' => __( 'Choose the number of posts to be displayed', 'wpwordpress' ),
 			'section' => 'sec_slider',
 			'type' => 'number'
 		)

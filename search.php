@@ -3,7 +3,7 @@
 		<div id="main">
 			<div class="container">
 				<!-- Mostra o que o usuário pesquisou -->
-				<h2>Search results for: </h2><?php echo get_search_query(); ?>
+				<h2><?php _e( 'Search results for:', 'wpwordpress' ); ?> <?php echo get_search_query(); ?></h2>
 				<?php 
 
 				//Chama o formulário de pesquisa
@@ -22,9 +22,8 @@
 				//Paginação com números
 				the_posts_pagination(
 					array(
-						'prev_text' => 'Previous',
-						'next_text' => 'Next',
-						'screen_reader_text' => ' '
+						'prev_text' => __( 'Previous', 'wpwordpress' ),
+						'next_text' => __( 'Next', 'wpwordpress')
 					)
 				);
 				?>

@@ -30,10 +30,10 @@
 									
 								<div class="row">
 									<div class="pages text-left col-6">
-										<?php previous_posts_link( "<< Newer posts" ); ?>
+										<?php previous_posts_link( __( "<< Newer posts", 'wpwordpress' ) ); ?>
 									</div>
 									<div class="pages text-right col-6">
-										 <?php next_posts_link( "Older posts >>" ); ?>
+										 <?php next_posts_link( __( "Older posts >>", 'wpwordpress' ) ); ?>
 									</div>
 								</div>
 	
@@ -42,7 +42,7 @@
 							else:
 							?>
 
-							 <p>There's nothing yet to be displayed...</p>
+							 <p><?php _e( 'There&rsquo;s nothing yet to be displayed...', 'wpwordpress' ); ?></p>
 
 							<?php endif; ?>
 
